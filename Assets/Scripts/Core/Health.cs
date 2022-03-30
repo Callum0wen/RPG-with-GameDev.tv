@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RPG.Combat
+namespace RPG.Core
 {
 	public class Health : MonoBehaviour
 	{
@@ -16,13 +16,19 @@ namespace RPG.Combat
 		public void TakeDamage(float damage)
 		{
 			healthPoints = Mathf.Max(healthPoints - damage, 0);
-			print(healthPoints);
-
-			if (!isDead && healthPoints <= 0)
+			if (healthPoints <= 0)
 			{
-				GetComponent<Animator>().SetTrigger("die");
-				isDead = true;
+				Die();
 			}
+		}
+
+		private void Die()
+		{
+			if (isDead) return;
+
+			isDead = true;
+			GetComponent<Animator>().SetTrigger("die");
+			GetComponent<ActionSchedular>().CancelCurrentAction();
 		}
 	}
 }
