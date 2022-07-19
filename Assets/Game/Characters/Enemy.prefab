@@ -28,6 +28,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 5
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 3
 --- !u!114 &8933735096453081133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,32 +115,32 @@ PrefabInstance:
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3129196
+      value: -13.72
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.757
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.7118225
+      value: -24.8
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7416882716764817492, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
@@ -167,7 +170,12 @@ PrefabInstance:
     - target: {fileID: 4148964405948917214, guid: b53d93b2d73b6b346adb7f3cbb574474,
         type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409749132482569391, guid: b53d93b2d73b6b346adb7f3cbb574474,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 837869013, guid: b53d93b2d73b6b346adb7f3cbb574474, type: 3}
       propertyPath: m_Speed

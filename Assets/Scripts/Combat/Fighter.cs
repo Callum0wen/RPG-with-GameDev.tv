@@ -7,7 +7,7 @@ namespace RPG.Combat
 	public class Fighter : MonoBehaviour, IAction
 	{
 		[SerializeField] float weaponRange = 2f;
-		[SerializeField] float weaponDamage = 5f;
+		[SerializeField] float weaponDamage = 10f;
 		[SerializeField] float timeBetweenAttacks = 1f;
 
 		Health target;
@@ -22,7 +22,7 @@ namespace RPG.Combat
 
 			if (!GetIsInRange())
 			{
-				GetComponent<Mover>().MoveTo(target.transform.position);
+				GetComponent<Mover>().MoveTo(target.transform.position, 1f);
 			}
 			else
 			{
@@ -75,9 +75,15 @@ namespace RPG.Combat
 
 		public void Cancel()
 		{
+			StopAttack();
+			target = null;
+			GetComponent<Mover>().Cancel();
+		}
+
+		private void StopAttack()
+		{
 			GetComponent<Animator>().ResetTrigger("attack");
 			GetComponent<Animator>().SetTrigger("stopAttack");
-			target = null;
 		}
 	}
 }
